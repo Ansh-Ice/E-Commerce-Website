@@ -1,4 +1,4 @@
 Contributors 
 - [Ansh Icecreamwala]()
-- [Sneh Prajapati]()
+- [Sneh Prajapati](https://github.com/Sneh1227)
 - [Poorav Shah]()
