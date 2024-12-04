@@ -1,0 +1,525 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 25-Oct-2024, 5:17:36 pm
+    Author     : anshi
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    background-color: #333; /* Navbar background color */
+    padding: 15px;
+    display: flex;
+    margin-top: 0px;
+    /*justify-content: space-between;*/
+    align-items: center;
+    color: white;
+}
+
+.navbar-container {
+    display: flex;
+    /*justify-content: space-between;*/
+    width: 100%;
+}
+
+.logo {
+    flex: 1; /* Push other items to the right */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px; /* Add spacing between icons */
+    align-items: center;
+}
+
+.nav-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.profile {
+    margin-left: 10px; /* Add spacing between profile and other icons */
+}
+
+/* Category Bar */
+.category-bar {
+    background-color: #f2f2f2; /* Light gray background for the category bar */
+    padding: 10px 20px; /* Padding for the category bar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.category-bar ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flex display for horizontal alignment */
+}
+
+.category-bar li {
+    margin-right: 15px; /* Spacing between category items */
+}
+
+.category-bar a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark color for text */
+    font-weight: bold; /* Bold text */
+    padding: 8px 15px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.category-bar a:hover {
+    background-color: #ddd; /* Change background on hover */
+}
+.hcontainer {
+    display: flex;
+    align-items: flex-start; /* Align sidebar and grid at the top */
+}
+
+.sidebar {
+    width: 150px;
+    padding: 20px;
+    margin-right: 0px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    height: 242vh; /* Full height sidebar */
+    overflow-y: auto; /* Enable scrolling if needed */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid-container {
+    margin-left: 40px; /* Same as sidebar width */
+    padding: 15px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid; /* Use grid layout for products */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 50px; /* Space between product cards */
+    padding: 100px; /* Padding around the grid */
+}
+
+.profile-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.profile-btn:hover {
+    background-color: #333;
+}
+
+.profile-container {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden initially */
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: right 0.5s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.profile-container.active {
+    right: 0;
+}
+.sidebar {
+    width: 250px;
+    /* (Other styles) */
+}
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Style for product image */
+.product-image {
+    width: 100%; /* Set the width of the image container to 100% */
+    height: auto; /* Let the height adjust according to the aspect ratio */
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%; /* Make sure the image takes the full width of the container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container without distorting */
+}
+
+.add-to-cart {
+    background-color: #FF6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 1px;
+}
+
+.add-to-cart:hover {
+    background-color: #FF4500;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    height: 100%;
+}
+
+/* Content section */
+.content {
+    width: 100%;
+    padding: 20px;
+}
+
+.main-content {
+    text-align: center;
+}
+h2 {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+}
+
+.close-btn {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    font-size: 16px;
+}
+
+textarea {
+    height: 30px;
+    resize: vertical;
+}
+
+/* Grouping Address Type and Pincode side by side */
+.form-group.inline-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group.inline-group label {
+    width: 100%;
+}
+
+.form-group.inline-group input {
+    width: 48%;
+}
+
+/* Buttons styling */
+button[type="button"], button[type="submit"] {
+    padding: 12px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+    background-color: #333;
+}
+
+button[type="submit"] {
+    margin-right: 0;
+}
+
+/* Change Password Link */
+.change-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.change-password:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
+header {
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    margin-right: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.profile a i {
+    margin-right: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2c3e50;
+    background-color: white;
+}
+#passwordModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Above other content */
+}
+/* Modal styling */
+.product-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-images {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.modal-details {
+    flex: 2;
+}
+
+#reviewsContainer {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.filter-section button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #f44336; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-section button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.wishlist-container{
+                width: 80%;
+                margin: 50px auto;
+}
+
+.home-icon {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.home-icon i {
+    font-size: 24px;
+    color: #007bff;
+}
+.home-icon a {
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
